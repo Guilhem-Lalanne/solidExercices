@@ -19,13 +19,15 @@ Réponses aux questions posées
 
 Q1) Pour éviter le switch sur l'opérateur, on peut utiliser des classes pour chaque opération.
 
-Q2)
+Q2) La POO permet de cacher certains fonctionnements à d'autres parties du code ou à l'utilisateur. Il faut alors passer par les objets eux-mêmes pour accéder à leur contenu (pas d'accès direct). C'est l'encapsulation.
 
-Q3)
+Q3)  C'est l'abstraction dont il est question ici. Elle permet de cacher l'utilisation de code complexe.
 
-Q4)
+Q4) Principe : la classe devrait pouvoir être utilisée depuis une autre interface.
+- Ici, les Console.WriteLine ne seront pas visibles depuis une interface graphique. Il faut les remplacer par un objet erreur, ou un String, qui sera utilisé selon les besoins.
+- La liste des opérations est figée. Il faut éditer le code pour pouvoir la changer ... On devrait pouvoir la récupérer depuis un fichier ou une base de données.
 
-Q5)
+Q5) On applique ici le principe de responsabilité unique : plutôt que d'avoir une classe qui fait plein de chose, on en fait interagir plusieurs, chacune avec ses propres responsabilités.
 
-Q6)
+Q6) On utilise ici le principe de séparation des interfaces, qui permet une diminution du couplage entre les classes.
  
