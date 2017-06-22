@@ -20,5 +20,13 @@ namespace SolidExercices.Tests
             var result = calculator.Calculate("2*2,3*4");
             Check.That(result).IsEqualTo(18.4);
         }
+
+        [Test]
+        public void CalculateASubstraction()
+        {
+            var calculator = new Calculator();
+            var result = calculator.Calculate("8-3,5-1-2");
+            Check.That(result).IsEqualTo(1.5);
+        }
     }
 }
