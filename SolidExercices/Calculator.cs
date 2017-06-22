@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 
 namespace SolidExercices
@@ -10,7 +11,7 @@ namespace SolidExercices
             Double result = 0;
             String[] substrings;
 
-            char[] operators = {'+', '*', '-'};
+            char[] operators = {'+', '*', '-', '/'};
             foreach (var op in operators)
             {
                 if (!operation.Contains(op)) continue;
@@ -49,6 +50,27 @@ namespace SolidExercices
                             String substring = substrings[i];
                             Double number = Convert.ToDouble(substring);
                             result = result - number;
+                        }
+                        break;
+
+                    case '/':
+                        substrings = operation.Split(op);
+                        result = Convert.ToDouble(substrings[0]);
+
+                        for (int i = 1; i < substrings.Length; i++)
+                        {
+                            String substring = substrings[i];
+                            Double number = Convert.ToDouble(substring);
+                            try
+                            {
+                                result = result / number;
+                            }
+                            catch (DivideByZeroException)
+                            {
+                                String error = "Division par 0 impossible !";
+                                Console.WriteLine(error);
+                            }
+                            
                         }
                         break;
                 }
