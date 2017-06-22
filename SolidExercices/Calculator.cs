@@ -10,33 +10,47 @@ namespace SolidExercices
             Double result = 0;
             String[] substrings;
 
-            char[] operators = {'+', '*'};
+            char[] operators = {'+', '*', '-'};
             foreach (var op in operators)
             {
-                if (operation.Contains(op))
+                if (!operation.Contains(op)) continue;
+                switch (op)
                 {
-                    switch (op)
-                    {
-                        case '+':
-                            substrings = operation.Split(op);
-                            result = 0;
-                            foreach (var substring in substrings)
-                            {
-                                Double number = Convert.ToDouble(substring);
-                                result = result + number;
-                            }
-                            break;
+                    case '+':
+                        substrings = operation.Split(op);
+                        result = Convert.ToDouble(substrings[0]);
+                        
+                        for (int i = 1; i < substrings.Length; i++)
+                        {
+                            String substring = substrings[i];
+                            Double number = Convert.ToDouble(substring);
+                            result = result + number;
+                        }
+                        break;
 
-                        case '*':
-                            substrings = operation.Split(op);
-                            result = 1;
-                            foreach (var substring in substrings)
-                            {
-                                Double number = Convert.ToDouble(substring);
-                                result = result * number;
-                            }
-                            break;
-                    }
+                    case '*':
+                        substrings = operation.Split(op);
+                        result = Convert.ToDouble(substrings[0]);
+                        
+                        for (int i = 1; i < substrings.Length; i++)
+                        {
+                            String substring = substrings[i];
+                            Double number = Convert.ToDouble(substring);
+                            result = result * number;
+                        }
+                        break;
+
+                    case '-':
+                        substrings = operation.Split(op);
+                        result = Convert.ToDouble(substrings[0]);
+
+                        for (int i = 1; i < substrings.Length; i++)
+                        {
+                            String substring = substrings[i];
+                            Double number = Convert.ToDouble(substring);
+                            result = result - number;
+                        }
+                        break;
                 }
             }
 

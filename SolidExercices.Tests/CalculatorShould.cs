@@ -25,7 +25,7 @@ namespace SolidExercices.Tests
         public void CalculateASubstraction()
         {
             var calculator = new Calculator();
-            var result = calculator.Calculate("8-3,5-1-2");
+            var result = calculator.Calculate("48-13,5-21-12");
             Check.That(result).IsEqualTo(1.5);
         }
     }
