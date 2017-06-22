@@ -7,18 +7,40 @@ namespace SolidExercices
     {
         public double Calculate(string operation)
         {
-            // split('+')
-            Char op = '+';
-            String[] substrings = operation.Split(op);
-            Double sum = 0;
-            foreach (var substring in substrings)
+            Double result = 0;
+            String[] substrings;
+
+            char[] operators = {'+', '*'};
+            foreach (var op in operators)
             {
-                Double number = Convert.ToDouble(substring);
-                sum = sum + number;
+                if (operation.Contains(op))
+                {
+                    switch (op)
+                    {
+                        case '+':
+                            substrings = operation.Split(op);
+                            result = 0;
+                            foreach (var substring in substrings)
+                            {
+                                Double number = Convert.ToDouble(substring);
+                                result = result + number;
+                            }
+                            break;
+
+                        case '*':
+                            substrings = operation.Split(op);
+                            result = 1;
+                            foreach (var substring in substrings)
+                            {
+                                Double number = Convert.ToDouble(substring);
+                                result = result * number;
+                            }
+                            break;
+                    }
+                }
             }
 
-            return sum;
+            return result;
         }
-
     }
 }
