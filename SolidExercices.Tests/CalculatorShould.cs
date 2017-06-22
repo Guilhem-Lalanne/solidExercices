@@ -28,5 +28,13 @@ namespace SolidExercices.Tests
             var result = calculator.Calculate("48-13,5-21-12");
             Check.That(result).IsEqualTo(1.5);
         }
+
+        [Test]
+        public void CalculateADivision()
+        {
+            var calculator = new Calculator();
+            var result = calculator.Calculate("48/2/4");
+            Check.That(result).IsEqualTo(6);
+        }
     }
 }
