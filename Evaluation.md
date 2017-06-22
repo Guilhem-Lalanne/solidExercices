@@ -17,7 +17,7 @@ A LA FIN DU TP: pensez à pousser vos commits sur votre compte GitHub et envoyer 
 Réponses aux questions posées
 -----------------------------
 
-Q1)
+Q1) Pour éviter le switch sur l'opérateur, on peut utiliser des classes pour chaque opération.
 
 Q2)
 
