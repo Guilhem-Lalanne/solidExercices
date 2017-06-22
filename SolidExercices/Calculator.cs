@@ -15,52 +15,29 @@ namespace SolidExercices
             foreach (var op in operators)
             {
                 if (!operation.Contains(op)) continue;
-                switch (op)
+
+                substrings = operation.Split(op);
+                result = Convert.ToDouble(substrings[0]);
+                for (int i = 1; i < substrings.Length; i++)
                 {
-                    case '+':
-                        substrings = operation.Split(op);
-                        result = Convert.ToDouble(substrings[0]);
-                        
-                        for (int i = 1; i < substrings.Length; i++)
-                        {
-                            String substring = substrings[i];
-                            Double number = Convert.ToDouble(substring);
+                    String substring = substrings[i];
+                    Double number = Convert.ToDouble(substring);
+
+                    switch (op)
+                    {
+                        case '+':
                             result = result + number;
-                        }
-                        break;
+                            break;
 
-                    case '*':
-                        substrings = operation.Split(op);
-                        result = Convert.ToDouble(substrings[0]);
-                        
-                        for (int i = 1; i < substrings.Length; i++)
-                        {
-                            String substring = substrings[i];
-                            Double number = Convert.ToDouble(substring);
+                        case '*':
                             result = result * number;
-                        }
-                        break;
+                            break;
 
-                    case '-':
-                        substrings = operation.Split(op);
-                        result = Convert.ToDouble(substrings[0]);
-
-                        for (int i = 1; i < substrings.Length; i++)
-                        {
-                            String substring = substrings[i];
-                            Double number = Convert.ToDouble(substring);
+                        case '-':
                             result = result - number;
-                        }
-                        break;
+                            break;
 
-                    case '/':
-                        substrings = operation.Split(op);
-                        result = Convert.ToDouble(substrings[0]);
-
-                        for (int i = 1; i < substrings.Length; i++)
-                        {
-                            String substring = substrings[i];
-                            Double number = Convert.ToDouble(substring);
+                        case '/':
                             try
                             {
                                 result = result / number;
@@ -70,9 +47,8 @@ namespace SolidExercices
                                 String error = "Division par 0 impossible !";
                                 Console.WriteLine(error);
                             }
-                            
-                        }
-                        break;
+                            break;
+                    }
                 }
             }
 
